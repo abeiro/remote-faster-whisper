@@ -5,3 +5,4 @@ soundfile
 faster_whisper
 flask
 configargparse
+ctranslate2==4.4.0
