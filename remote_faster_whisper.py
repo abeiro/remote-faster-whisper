@@ -33,6 +33,7 @@ from numpy import float32
 from soundfile import read as sf_read
 from re import sub, search
 
+import faster_whisper.utils
 
 class FasterWhisperApi:
     def __init__(
@@ -208,6 +209,28 @@ def start_api():
     """
     Parse arguments, grab configuration, and initialize and start the API
     """
+    faster_whisper.utils._MODELS = {
+        "tiny.en": "Systran/faster-whisper-tiny.en",
+        "tiny": "Systran/faster-whisper-tiny",
+        "base.en": "Systran/faster-whisper-base.en",
+        "base": "Systran/faster-whisper-base",
+        "small.en": "Systran/faster-whisper-small.en",
+        "small": "Systran/faster-whisper-small",
+        "medium.en": "Systran/faster-whisper-medium.en",
+        "medium": "Systran/faster-whisper-medium",
+        "large-v1": "Systran/faster-whisper-large-v1",
+        "large-v2": "Systran/faster-whisper-large-v2",
+        "large-v3": "Systran/faster-whisper-large-v3",
+        "large": "Systran/faster-whisper-large-v3",
+        "distil-large-v2": "Systran/faster-distil-whisper-large-v2",
+        "distil-medium.en": "Systran/faster-distil-whisper-medium.en",
+        "distil-small.en": "Systran/faster-distil-whisper-small.en",
+        "distil-large-v3": "Systran/faster-distil-whisper-large-v3",
+        "large-v3-turbo": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+        "turbo": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+        "numbat-base-skyrim-en":"Numbat/faster-skyrim-whisper-base.en"
+    }
+    
     options = parse_args()
     config = parse_config(options.config)
     api = FasterWhisperApi(
