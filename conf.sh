@@ -1,17 +1,19 @@
 #!/bin/bash
 clear
 cat << EOF
-Faster Local Whisper
+LocalWhisper
 
-This will install Local Whisper. A STT server. Only works for English.
+This will install LocalWhisper. A STT server.
+The "larger" the model the more accurate it will translate your speech.
 
-The "larger" the model you pick the more accurate it will translate.
-
-But will require more hardware. Small has selection between GPU or CPU.
+Options:
+* Small-CPU-EN = Base English model running on CPU. Only option for AMD cards.
+* Small-GPU-EN = Base English model on GPU, runs faster.
+* Small-GPU-ES = Base Espanol model on GPU.
+* Tiny-GPU-EN = Minimal model for less powerful systems.
+* GPU-Skyrim = Specially trained model for Skyrim style words.
 
 If not sure pick Small-GPU-EN.
-
-
 
 EOF
 
